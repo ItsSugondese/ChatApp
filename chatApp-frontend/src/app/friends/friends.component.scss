@@ -1,0 +1,33 @@
+.container {
+	display: flex;
+    justify-content: space-between;
+	align-items: center;
+	align-content: center;
+    background-color: red;
+    width: 50%;
+	margin-top: 6px;
+}
+
+.left {
+	display: flex;
+}
+
+.left>div {
+	padding: 20px;
+	padding-top: 0px;
+}
+
+.right {
+	text-align: right;
+	align-items: center;
+	align-content: center;
+}
+
+.username {
+        display: flex;
+        flex-direction: column;
+        padding: 0px;
+        align-items: center;
+        justify-content: space-evenly;
+    
+}

@@ -1,0 +1,68 @@
+<!-- <div id="buttons">
+    <button>Connect</button>
+    <button>Disconnect</button>
+    <h3 *ngIf="userName"> {{userName}} </h3>
+</div>
+
+<div id="home-body" *ngIf="!userName;then userRegister else chatbox"></div>
+
+<ng-template #userRegister>
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+        Enter your name:
+        <input type="text" id="name" formControlName="name" required="Please enter your name to continue">
+        <input type="submit" value="submit">
+    </form>
+</ng-template>
+
+<ng-template #chatbox>
+    <div id="chat-room">
+        <div id="group-room" onclick="alert('Fuck you')">
+           <div id="image-container">
+            <img id="group-logo" src="../../assets/group.png" height="10"/> 
+            </div>
+           <h1> Join group chat</h1>
+        </div>
+
+        <div id="active-people">
+            <div id="people" onclick="alert('working ')" *ngFor="let item of onlineUser">
+                <h2>{{item.name}}</h2>
+            </div>
+        </div>
+    </div>    
+</ng-template>
+
+<button (click)="fuck()"> Make request</button>
+ -->
+
+
+ <!-- <div id="buttons">
+    <button title="Add friend"> <i class="fa-solid fa-user-plus fa-2x"></i> </button>
+    <button title="Chat"><i class='fas fa-comment-alt fa-2x'></i></button>
+
+    
+    <button title="View Friend Requests"> <i class="	fas fa-user-friends fa-2x"></i> </button>
+    
+   <i class="	fas fa-user-circle fa-2x"> </i>
+    <h3 *ngIf="username"> {{username}} </h3>
+</div> -->
+
+<app-navbar></app-navbar>
+
+
+    <div id="chat-room">
+        <div id="group-room" onclick="alert('Fuck you')">
+           <div id="image-container">
+            <img id="group-logo" src="../../assets/group.png" height="10"/> 
+            </div>
+           <h1> Join group chat</h1>
+        </div>
+
+        <div id="active-people">
+            <div id="people" onclick="alert('working ')" *ngFor="let item of onlineUser">
+                <h2>{{item.name}}</h2>
+            </div>
+        </div>
+    </div>    
+
+
+<button (click)="fuck()"> Make request</button>

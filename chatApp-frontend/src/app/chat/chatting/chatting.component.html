@@ -1,0 +1,52 @@
+<ng-container *ngIf="userData; then chat; else select"></ng-container>
+
+<ng-template #chat>
+    <div class="chat">
+      <div class="chat-header clearfix">
+        <div class="row">
+          <div class="col-lg-6">
+            <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info">
+              <img src="../../../assets/images/profile.png" alt="avatar">
+            </a>
+            <div class="chat-about">
+              <h6 class="m-b-0">{{ userData.name }}</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="chat-history">
+        <ul class="m-b-0 " *ngFor="let message of this.messageMapping.get(userData.sessionId)">
+            <li class="clearfix" *ngIf="message.from !== userId; else sender">
+                <div class="message-data text-right">
+                    <img src="../../../assets/images/profile.png" alt="avatar">
+                </div>
+                <div class="message other-message float-right"> {{message.content}} </div>
+            </li>
+            <ng-template #sender>
+            <li class="clearfix">
+                <div class="message-data">
+                </div>
+                <div class="message my-message">{{message.content}}</div>                                    
+            </li> 
+        </ng-template>                              
+            
+        </ul>
+    </div>
+      
+
+      <div class="chat-message clearfix">
+       <span *ngIf="isTyping.get(this.userData.sessionId)"> Typeing</span>
+        <div class="input-group mb-0">
+            
+            <input id="input-field" type="text" class="form-control"  placeholder="Enter text here..." (input)="onInput($event)"  #inputField (keyup.enter)="sendValue(inputField.value)" >                                    
+            
+          </div>
+    </div>
+    </div>
+
+</ng-template>
+
+
+<ng-template #select>
+Select one person at the left side to chat, if there aren't any, no friends
+</ng-template>

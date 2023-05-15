@@ -1,0 +1,18 @@
+<div class="d-flex align-items-center justify-content-center vh-100 bg-secondary">
+    <div class="container w-50">
+        <div class="d-flex justify-content-center bg-light text-dark p-3 mb-1">
+            Login
+        </div>
+        <form class="bg-light p-3" [formGroup]="registerForm" (ngSubmit)="submitDetails()">
+            <div class="form-group ">
+                <label for="exampleInputEmail1">Username</label>
+                <input type="text" class="form-control" id="exampleInputName" aria-describedby="nameHelp"
+                    placeholder="Enter username" formControlName="name">
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary text-center" >Submit</button>
+
+            </div>
+        </form>
+    </div>
+</div>

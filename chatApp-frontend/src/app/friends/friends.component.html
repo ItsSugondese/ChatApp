@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+
+<ng-component *ngIf="userList.length > 0; then users; else noOne"></ng-component>
+
+<ng-template #users>
+<div class="container" *ngFor="let user of userList">
+    <div>
+        <img src="../../assets/images/profile.png" height="100px" /> {{user.name}}
+    </div>
+    
+        
+    
+    <div class="right">
+        <button (click)="removeFriend(user.sessionId)">Remove</button>
+    </div>
+</div>
+</ng-template>
+
+<ng-template #noOne>You have 0 friends</ng-template>

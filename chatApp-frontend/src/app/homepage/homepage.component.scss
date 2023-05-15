@@ -1,0 +1,121 @@
+//global element
+
+
+/*header contain following structure
+#buttons >>> <button> <h3>
+
+*/
+//contains connect and disconnect button inside it
+// #buttons{
+//     border: 2px solid red ;
+//     padding: 10px;
+// }
+
+
+// //every button expect connect
+// #buttons > *:not(:first-child) {
+//     margin-left: 40px;
+// }
+
+// //name of the user to disply at the right side
+// #buttons > h3{
+//     float: right;
+// }
+
+:not(:first-child){
+    margin : 3px
+}
+
+
+#buttons {
+        border: 2px solid red ;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .buttons-wrapper {
+    display: flex;
+  }
+  
+  .right-content {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
+  
+
+  
+
+
+/* body contains the following structure
+
+#home-body has a form  to insert name
+
+#home-body >> #userRegister (if username is not inserted)
+
+(if username is inserted in form)
+#home-body >> #chatbox >> #chat-room >> #group-room >> h1, #image-container >> #group-logo
+#home-body >> #chatbox >> #chat-room >> #active-people >> #people
+
+*/
+
+
+//contains every body element i.e. users availabel for chat
+#home-body{
+    clear: both;
+}
+
+
+
+//section dedicated for group-chat
+
+#chat-room {
+    border: 2px solid red;
+    padding: 10px;
+}
+#chat-room > #group-room{
+    border: 2px solid black;
+
+}
+
+//just a sytlying image of group icon. Its inside #grouop-room 
+#group-logo{
+    width: 100%;
+    height: auto;
+}
+
+//where the group logo image is being kept and is being decorated
+#image-container{
+    width: 3%;
+    float: left;
+}
+
+
+
+
+//seectign every element expect group-logo picture
+#group-room :not(:first-child){
+    margin-left:50px;
+}
+
+
+
+//for active people 
+#active-people{
+    clear: both;
+}
+
+//people are the currently active, using *ngFor loop to display
+#people{
+    border: 2px solid black;
+    margin: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+#people :not(:first-child) {
+    margin-top: 10px;
+    color: blue;
+}

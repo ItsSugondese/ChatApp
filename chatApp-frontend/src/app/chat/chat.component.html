@@ -1,0 +1,29 @@
+<app-navbar></app-navbar>
+
+
+
+
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-lg-12">
+            <div class="card chat-app">
+                <div id="plist" class="people-list"  >
+                    
+                    <ul id="person" class="list-unstyled chat-list mt-2 mb-0" >
+                        <li class="clearfix" *ngFor="let user of userList; let i = index" (click)="redirectToChat(user)">
+                            <img src="../../assets/images/profile.png" alt="avatar">
+                            <div class="about">
+                                <div class="name">{{user.name}} <span *ngIf="newMessage.get(user.sessionId)" class="fs-3" style="color: red;">!</span></div>                                           
+                            </div>
+                        </li>
+                                                         
+                        
+                    </ul>
+                </div>
+                
+                   <span *ngIf="selectedUser" class="chat"> <app-chatting class="chat" [userData] = "selectedUser" (parentFunction)="getMessageStatus($event)"></app-chatting> </span>
+
+            </div>
+        </div>
+    </div>
+    </div>

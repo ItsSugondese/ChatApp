@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+
+<ng-component *ngIf="userList.length > 0; then users; else noOne"></ng-component>
+
+<ng-template #users>
+<div class="flex-container" >
+  <div *ngFor="let user of userList; let i = index">
+    <div class="img-container">
+      <img class="card-img-top img-fluid" src="../../assets/images/profile.png" style="width: auto;"
+        alt="Card image cap">
+    </div>
+    <div class="card-body">
+      <p class="card-text"> {{user.name}} </p>
+     
+        <button (click)="sendRequest(user.sessionId)"> Confirm</button>
+        <button class="mt-3" (click)="cancelRequest(user.sessionId)">Remove</button>
+      
+    </div>
+  </div>
+</div>
+</ng-template>
+
+<ng-template #noOne>You haven't got any requests yet</ng-template>
+
+
+
